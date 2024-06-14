@@ -1,0 +1,46 @@
+# Navigate to your project directory
+$ cd /path/to/your/project
+
+# Create a virtual environment named 'venv'
+$ python -m venv venv
+
+# Activate the virtual environment (Windows)
+$ venv\Scripts\activate
+
+# Activate the virtual environment (Unix/MacOS)
+$ source venv/bin/activate
+
+# Install required libraries
+(venv) $ pip install requests numpy matplotlib
+
+# Freeze dependencies to requirements.txt
+(venv) $ pip freeze > requirements.txt
+
+When you're done working on your project, you can deactivate the virtual environment:
+deactivate
+This command will return you to your system's default Python environment.
+
+Using requirements.txt in Another Environment
+To use the requirements.txt file on another machine or to set up the same environment elsewhere, you can create a new virtual environment and install packages from the file:
+
+# Create a new virtual environment
+$ python -m venv new_venv
+
+# Activate the new virtual environment
+$ source new_venv/bin/activate  # on Unix/MacOS
+$ new_venv\Scripts\activate     # on Windows
+
+# Install packages from requirements.txt
+(new_venv) $ pip install -r requirements.txt
+
+
+
+
+
+Path Parameters 
+Format: Path parameters are specified within curly braces {} in the URL path. For example, /users/{userId}/posts/{postId}.
+Usage: Path parameters are part of the URL path and are used to specify which resource or entity the API request is targeting. They are essential for RESTful APIs to define hierarchical relationships and identify specific items.
+
+Query Parameters
+Format: Query parameters follow a key=value format and are separated from the base URL and each other by a ? and & respectively. For example, /search?q=python&sort=rating.
+Usage: Query parameters are optional and used to modify the response or behavior of the server. They do not affect the structure or hierarchy of the URL path but provide supplementary data.
